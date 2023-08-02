@@ -23,16 +23,18 @@ function appendCat(name) {
 }
 
 function prependCat(name) {
-    let newArray = [name, ...cats];
+    let newArray = cats.slice();
+    newArray.unshift(name);
     return newArray;
 }
 
 function removeLastCat(){
-    const newArray = cats.slice(0, -1);
+    let newArray = [...cats.slice(0,-1)];
     return newArray;
 }
 
 function removeFirstCat() {
-    const newArray = cats.slice(1);
+    let newArray = cats.slice();
+    newArray.shift();
     return newArray;
 }
